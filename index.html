@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="body">
+
+    <main>
+
+        <section id="main" class="box-left">
+            <h2>ยิงเลเซอร์สะพานพระราม 8</h2>
+            <form action="#">
+                <div>
+                    <label for="inputtext">ข้อความ</label>
+                    <input type="text" name="" id="inputtext" value="ใส่ข้อความ">
+                    <span></span>
+                </div>
+                <div>
+                    <label for="">ขนาดตัวอักษร</label>
+                    <input id="fontsize" type="range">
+                </div>
+                <div>
+                    <label for="">แกน X</label>
+                    <input id="x" type="range">
+                </div>
+                <div>
+                    <label for="">แกน Y</label>
+                    <input id="y" type="range">
+                </div>
+                <div>
+                    <label for="">สีข้อความ</label>
+                    <input id="colortext" type="color">
+                    <label for="">สีไฟนีออน</label>
+                    <input id="shadowtext" type="color">
+                </div>
+            </form>
+            <div id="download">Download</div>
+        </section>
+        <section id="downloadimg" class="box-right">
+            <p id="texttitle"></p>
+            <img src="rama8-img.png" alt="">
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/g/filesaver.js"></script>
+    <script>
+        $(document).ready(function() {
+            //id event
+            $("#download").click(function() {
+                //element of img
+                domtoimage.toBlob(document.getElementById("downloadimg")).then(function(blob) {
+                    window.saveAs(blob,"output.png");
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffff;
+}
+
+body{
+    background-color: #1c1c1c;
+}
+
+main{
+    display: flex;
+}
+
+.box-left{
+    padding: 30px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box-left form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.box-left form > div{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.box-left form > div:nth-of-type(1){
+    position: relative;
+    transition: all 0.2s;
+}
+
+.box-left form > div:nth-of-type(1) > span{
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transform-origin: center;
+    transform: scale(0,0);
+    transition: transform 0.3s;
+}
+
+.box-left form > div:last-child{
+    flex-direction: row;
+    column-gap: 20px;
+}
+
+#inputtext{
+    position: relative;
+    height: 40px;
+    background-color: #1c1c1c;
+    transition: all .2s;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid #ffffff5d;
+}
+
+.box-left form #inputtext:focus{
+    outline: none;
+}
+
+.adddiv1_scale{
+    transform: scale(1,1) !important;
+}
+
+.box-right{
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+}
+
+.box-right > p{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    width: 5px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.box-right > img{
+    width: 100%;
+}
+
+#download{
+    width: 100px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+}
+
+@media screen and (max-width: 695px) {
+    main{
+        flex-direction: column;
+    }
+
+    .box-left{
+        width: 100%;
+    }
+
+    .box-right{
+        width: 100%;
+    }
+}
